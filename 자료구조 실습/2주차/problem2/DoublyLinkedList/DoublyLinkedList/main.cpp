@@ -1,14 +1,5 @@
-//
-//  main.cpp
-//  DoublyLinkedList
-//
-//  Created by 이주훈 on 2022/03/15.
-//
-
-
 #include <iostream>
 #include <string>
-//#include "DoublyLinkedList.hpp"
 using namespace std;
 
 struct Node {
@@ -35,6 +26,7 @@ private:
 DoublyLinkedList::DoublyLinkedList(){
     this->head = NULL;
     this->tail = NULL;
+    nodeCount = 0;
 }
 
 void DoublyLinkedList::print() {
@@ -55,26 +47,27 @@ void DoublyLinkedList::append(int x) {
     if (nodeCount == 0) {
         Node* newNode = new Node;
         newNode->data = x;
-        this->head = this->tail = newNode;
+        head = newNode;
+        tail = newNode;
         newNode->prevNode = NULL;
         newNode->nextNode = NULL;
-        this->nodeCount += 1;
-        this->print();
+        nodeCount++;
+        print();
         return;
     }
     
-    Node* currentNode = head;
-    for (int i = 0; i < nodeCount-1; i++) {
-        currentNode = currentNode->nextNode;
-    }
+    Node* currentNode = tail;
+//    for (int i = 0; i < nodeCount-1; i++) {
+//        currentNode = currentNode->nextNode;
+//    }
     
     Node* newNode = new Node;
     newNode->data = x;
     currentNode->nextNode = newNode;
     newNode->prevNode = currentNode;
     newNode->nextNode = NULL;
-    this->tail = newNode;
-    this->nodeCount += 1;
+    tail = newNode;
+    nodeCount++;
     print();
 }
 
@@ -85,11 +78,12 @@ int DoublyLinkedList::deleteNode(int index){
     }
     
     Node* currentNode = head;
-    int returnData = head->data;
+    
     if (index == 0)
     {
         if (nodeCount == 1) {
-            head = tail = NULL;
+            head = NULL;
+            tail = NULL;
         }
         else {
             head = head->nextNode;
@@ -97,20 +91,24 @@ int DoublyLinkedList::deleteNode(int index){
         }
     }
     else {
+        Node* prev = NULL;
+        Node* next = NULL;
         for (int i = 0; i < index; i++)
         {
             currentNode = currentNode->nextNode;
         }
-        currentNode->prevNode->nextNode = currentNode->nextNode;
+        prev = currentNode->prevNode;
+        prev->nextNode = currentNode->nextNode;
         if (currentNode == tail) {
             tail = currentNode->prevNode;
         }
         else{
-            currentNode->nextNode->prevNode = currentNode->prevNode;
+            next = currentNode->nextNode;
+            next->prevNode = prev;
         }
     }
 
-    returnData = currentNode->data;
+    int returnData = currentNode->data;
     delete currentNode;
     nodeCount--;
 
@@ -137,17 +135,20 @@ void DoublyLinkedList::update(int x, int y) {
     }
     Node* currentNode = head;
     bool check = false;
+    
     while (currentNode != NULL) {
         if (currentNode->data == x) {
             currentNode->data = y;
+            check = true;
         }
         currentNode = currentNode->nextNode;
     }
-    if (check) {
+    
+    if (!check) {
         cout << "Not found" << endl;
         return;
     }
-    this->print();
+    print();
 }
 
 
@@ -182,8 +183,9 @@ int main(int argc, const char * argv[]) {
             cin >> x >> y;
             DoubleList.update(x, y);
         }
+        
     }
-    cout << endl;
+    
     return 0;
 }
 
