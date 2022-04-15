@@ -1,10 +1,10 @@
-package Main;
+package week4;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class Main {
+public class Error {
 
     static void writeFileLog() throws IOException {
         // Try Catch 문으로 작성 또는 상위로 throws

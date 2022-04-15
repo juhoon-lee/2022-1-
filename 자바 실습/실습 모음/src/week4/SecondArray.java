@@ -1,8 +1,6 @@
-package Main;
+package week4;
 
-import java.util.Arrays;
-
-public class Main {
+public class SecondArray {
 
     // 동적으로 배열 생성 후 리턴
     static int[] makeArray(){
