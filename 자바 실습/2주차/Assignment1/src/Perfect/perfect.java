@@ -8,7 +8,6 @@ public class perfect {
                 sum += i;
             }
         }
-
         return arg == sum;
     }
 

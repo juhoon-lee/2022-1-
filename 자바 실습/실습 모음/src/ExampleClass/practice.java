@@ -1,6 +1,6 @@
-package week7;
+package ExampleClass;
 
-public class Main {
+public class practice {
     public static void main(String[] args) {
 
     }

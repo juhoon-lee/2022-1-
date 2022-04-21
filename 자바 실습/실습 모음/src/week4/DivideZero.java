@@ -9,6 +9,7 @@ public class DivideZero {
         return tmp;
     }
 
+
     public static void main(String[] args) {
         int dividend;
         int divisor;

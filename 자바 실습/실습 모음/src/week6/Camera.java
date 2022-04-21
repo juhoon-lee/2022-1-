@@ -20,6 +20,7 @@ public class Camera {
     void sendData(byte[] data){
         System.out.println(Arrays.toString(data));
     }
+
     void moveLeft() {
         System.out.println("Base Class moveLeft!");
     }

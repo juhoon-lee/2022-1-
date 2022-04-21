@@ -20,4 +20,3 @@ public class BookArray {
         scanner.close();
     }
 }
-

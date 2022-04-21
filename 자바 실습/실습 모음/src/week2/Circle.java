@@ -8,10 +8,9 @@ public class Circle {
         System.out.println("radius: ");
         Scanner sc = new Scanner(System.in);
         int r = sc.nextInt();
-
         double area = PI*r*r;
 
         System.out.println("원의 면적은 " + area + "입니다.");
-        sc.close();
+        sc.close(); // Scanner close 까먹지 않기
     }
 }

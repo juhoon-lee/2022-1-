@@ -10,7 +10,6 @@ public class Array {
         }
         System.out.println(Arrays.toString(arr)); // 배열의 원소를 String으로 한 줄로 출력함
 
-
         boolean[] arr2 = new boolean[5];
         for (boolean e : arr2) {
             System.out.println(e); // boolean의 초기값은 false이군

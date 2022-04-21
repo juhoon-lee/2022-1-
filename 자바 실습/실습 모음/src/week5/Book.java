@@ -7,8 +7,8 @@ public class Book {
 
     public Book(String t){
         this(t, "작자미상");
-    }// this를 쓰려면 매개변수가 많은것 부터 줄여나가는게 좋을듯
-    public  Book(String t, String a){
+    }// this를 쓰려면 매개변수가 많은것 부터 쓰고 줄여나가는게 좋을듯하다.
+    public Book(String t, String a){
         title = t;
         author = a;
     }

@@ -94,6 +94,10 @@ void nodeList::eraseBack() {
 int main(int argc, const char * argv[]) {
     
     nodeList example = nodeList();
+    example.insertFront(1);
+    example.insertBack(2);
+    
+    
     
     return 0;
 }
