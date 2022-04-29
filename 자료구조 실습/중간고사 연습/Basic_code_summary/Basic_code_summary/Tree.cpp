@@ -6,7 +6,7 @@ struct node {
     int data;
     node* parent;
     vector<node*> childList;
-    node(int data, node* parent) { // 굳이 없어도 괜찮지 않나.. 보단 있는게 코드 짜는데 좋긴 하네
+    node(int data, node* parent) {
         this->data = data;
         this->parent = parent;
     }
