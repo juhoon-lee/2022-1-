@@ -3,8 +3,8 @@
 #include <pthread.h>
 #include <stdio.h>
 #define ITER 1000
-void *thread_increment(void *arg);
-void *thread_decrement(void *arg);
+void *producer(void *arg);
+void *consumer(void *arg);
 int x;
 sem_t m, upperBound, lowerBound;// 세마포어
 
@@ -36,7 +36,7 @@ int main() {
 }
 
 
-void * producer (void *arg) {
+void * producer (void *arg) { // 생산자
   int i, val;
   for (i=0; i< ITER ; i++) {
     sem_wait(&upperBound); // 0보다 커지려 하면 조건 동기
@@ -50,7 +50,7 @@ void * producer (void *arg) {
   return NULL;
 }
 
-void * consumer (void *arg) {
+void * consumer (void *arg) { // 소비자
   int i, val;
   for (i=0; i< ITER ; i++) {
     sem_wait(&lowerBound); // -30보다 작아지려 하면 조건 동기

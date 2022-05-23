@@ -1,11 +1,12 @@
 #include <pthread.h>
 #include <stdio.h>
 #define ITER 1000
-void *thread_increment(void *arg);
-void *thread_decrement(void *arg);
+void *producer(void *arg);
+void *consumer(void *arg);
 int x;
 pthread_mutex_t m; // mutex
-pthread_t c;
+pthread_cond_t c;
+
 int main() {
     pthread_t tid1, tid2;
     
@@ -31,8 +32,7 @@ int main() {
     pthread_mutex_destroy(&m);
 }
 
-
-void * producer (void *arg) {
+void * producer (void *arg) { // 생산자
     int i, val;
     for (i=0; i< ITER ; i++) {
         pthread_mutex_lock(&m); // 상호배제
@@ -48,7 +48,7 @@ void * producer (void *arg) {
     return NULL;
 }
 
-void * consumer (void *arg) {
+void * consumer (void *arg) { // 소비자
     int i, val;
     for (i=0; i< ITER ; i++) {
         pthread_mutex_lock(&m); // 상호배제
@@ -63,3 +63,4 @@ void * consumer (void *arg) {
     }
     return NULL;
 }
+
