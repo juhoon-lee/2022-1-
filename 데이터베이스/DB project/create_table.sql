@@ -38,7 +38,8 @@ create table bucket_detail
 -- 구매확정 테이블 생성
 create table purchased
   (b_ID varchar(15),
-  purchased_date numeric(10,0),
+  purchased_date varchar(20,0),
+  coupon numeric(2,0),
   primary key (b_ID) 
   );
 
@@ -51,9 +52,8 @@ create table refund
   primary key (b_ID, purchased_date, p_ID) 
   );
 
-
 -- 평가 테이블 생성
-create table ㄷvaluation
+create table evaluation
   (c_ID	varchar(15), 
   p_ID varchar(15),
   grade numeric(3,0),
