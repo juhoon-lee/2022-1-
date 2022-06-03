@@ -23,7 +23,7 @@ class Point {
         this.y = y;
     }
 
-    public  boolean equals(Object p) {
+    public boolean equals(Object p) {
         if (!(p instanceof Point)) return false;
         Point obj = (Point) p;
         if (x == obj.x && y == obj.y) return true;

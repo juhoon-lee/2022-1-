@@ -26,6 +26,5 @@ public class ArrayList_practice {
             }
         }
         System.out.println("가장 긴 이름은 : " + a.get(maxLengthIndex));
-
     }
 }

@@ -13,7 +13,6 @@ class MoveLabel extends JFrame {
         setTitle("Move Label Frame");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-
         Container c = getContentPane();
 
         c.add(label,BorderLayout.CENTER);

@@ -12,7 +12,6 @@ class MyThread extends Thread {
 }
 
 class MyRunnable implements Runnable {
-
     @Override
     public void run() {
         System.out.println("Thread 2 (Runnable)");
@@ -24,7 +23,6 @@ class MyRunnable implements Runnable {
 }
 
 public class TreadTest {
-
     static void g() throws InterruptedException {
 
         // thread 상속해서 만들기

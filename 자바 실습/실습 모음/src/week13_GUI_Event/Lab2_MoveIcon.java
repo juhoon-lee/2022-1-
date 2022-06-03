@@ -66,7 +66,6 @@ class MoveIcon extends JFrame {
             }
         });
 
-
         setVisible(true);
     }
 }
