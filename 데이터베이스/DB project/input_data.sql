@@ -78,7 +78,7 @@ insert into bucket_detail values ('bk_10','a2',3);
 insert into bucket_detail values ('bk_10','b2',7);
 insert into bucket_detail values ('bk_10','d5',2);
 
--- 구매확정 내역 입력
+-- 구매확정 내역 입력 및 평점 평가
 insert into purchased values ('bk_7','22.05.20',0); -- ID 4가 구매 및 평가
 insert into evaluation values ('4','d1',3,'부드러워요');
 insert into evaluation values ('4','a4',5,'건강해여');
@@ -94,8 +94,6 @@ insert into evaluation values ('5','c5',4,'알이 많아요');
 
 insert into purchased values ('bk_3','22.06.02',0); -- ID 2가 구매 및 평가
 insert into evaluation values ('2','c4',3,'그냥 그래요');
-insert into evaluation values ('2','d5',1,'질겨요');
-insert into evaluation values ('2','a3',5,'너무 좋아요');
 
 insert into purchased values ('bk_5','22.06.03',0); -- ID 3이 구매 및 평가
 insert into evaluation values ('3','b3',3,'나쁘지 않아요');
@@ -115,10 +113,17 @@ insert into purchased values ('bk_10','22.06.20',1); -- ID 5가 구매 및 평�
 insert into evaluation values ('5','a2',2,'딱딱해요');
 insert into evaluation values ('5','b2',4,'꿀맛');
 
--- 환불 내역 입력
-insert into refund values ('bk_1','22.05.23',0);
-insert into refund values ('bk_1','22.05.23',0);
-insert into refund values ('bk_1','22.05.23',0);
-
-
-
+-- 환불 내역 입력 -- 바구니 날짜 물품 개수
+-- bk2 일부 환불
+insert into refund values ('bk_2','22.05.21','b2',2);
+-- bk5 일부 환불
+insert into refund values ('bk_5','22.06.03','b3',5);
+insert into refund values ('bk_5','22.06.03','c2',2);
+-- bk7 전체 환불
+insert into refund values ('bk_7','22.05.20','d1',4);
+insert into refund values ('bk_7','22.05.20','a4',2);
+insert into refund values ('bk_7','22.05.20','c5',3);
+-- bk9 전체 환불
+insert into refund values ('bk_9','22.05.25','c5',3);
+insert into refund values ('bk_9','22.05.25','c4',3);
+insert into refund values ('bk_9','22.05.25','c3',4);

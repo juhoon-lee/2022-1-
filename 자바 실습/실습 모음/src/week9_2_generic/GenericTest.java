@@ -16,11 +16,9 @@ class GenericItem <T> {
     public T getData() {
         return data;
     }
-
     public void setData(T data) {
         this.data = data;
     }
-
     private T data;
 }
 
@@ -62,6 +60,5 @@ public class GenericTest {
         // 다중 타입 매개변수 제네릭
         multiTypeGeneric<String,Integer> a1 = new multiTypeGeneric<>(); // String, Integer
         multiTypeGeneric<Integer,Integer> a2 = new multiTypeGeneric<>();// Integer, Integer
-
     }
 }
