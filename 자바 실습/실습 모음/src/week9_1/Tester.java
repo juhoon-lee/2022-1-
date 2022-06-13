@@ -41,6 +41,7 @@ public class Tester {
         System.out.println(p1.hashCode()); //System.out.println(System.identityHashCode(a));
         System.out.println(p2.hashCode());
         System.out.println(p3.hashCode());
+
         System.out.println("=============getClass()=====================");
         Point p4 = new Point(5,6);
         System.out.println(p4.getClass().getName());

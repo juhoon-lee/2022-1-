@@ -1,0 +1,10 @@
+기말고사
+## 6장 문자열
+String - immutable, read only
+String s = "abcd"
+String s = new String("abcd")
+비교는 s.equals()를 이용( ==은 리터럴을 비교 equals()는 객체를 비교)
+.concat() // suffix 붙힘
+
+StringBuffer sb = new String Buffer("Java");
+생성자에는 초기버퍼 16, 다른버퍼,배열의 크기, 스트링으로 새로 초기화가 가능하다.
