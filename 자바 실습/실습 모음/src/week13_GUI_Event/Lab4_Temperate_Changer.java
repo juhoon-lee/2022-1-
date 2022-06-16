@@ -49,7 +49,6 @@ class TempChanger extends JFrame {
                 tfF.setText(""+f);
             }
         });
-
         btnFC.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

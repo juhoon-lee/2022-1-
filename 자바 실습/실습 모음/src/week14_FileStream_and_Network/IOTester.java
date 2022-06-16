@@ -19,7 +19,6 @@ public class IOTester {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     static void binRead() {

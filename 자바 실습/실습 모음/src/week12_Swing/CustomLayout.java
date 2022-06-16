@@ -22,8 +22,6 @@ class NullLayout extends JFrame {
             c.add(label);
         }
 
-
-
         setVisible(true);
     }
 }

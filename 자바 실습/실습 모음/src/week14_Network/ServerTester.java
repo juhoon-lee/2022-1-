@@ -16,7 +16,6 @@ public class ServerTester {
         ServerSocket server = new ServerSocket(); // 서버소켓 생성
         db.put("map","지도");
         db.put("inha","인하");
-
         server.bind(new InetSocketAddress("127.0.0.1",5000)); // 소켓 바인딩
         System.out.println("[Server] Start!");
 

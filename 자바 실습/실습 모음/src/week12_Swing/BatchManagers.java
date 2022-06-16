@@ -44,7 +44,7 @@ class MyFrame extends JFrame {
         c.add(p);
         c.add(g);
 
-        setContentPane(c); // 컨텐트펜 원래대로 변경
+//        setContentPane(c); // 컨텐트펜 원래대로 변경
         setVisible(true);
     }
 }
