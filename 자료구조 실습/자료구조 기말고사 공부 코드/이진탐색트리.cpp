@@ -94,7 +94,7 @@ void binarySearchTree::remove(int key) {
         childNode = delNode->right;
     }
     else if (delNode->left != NULL && delNode->right == NULL) {
-        childNode = delNode->right;
+        childNode = delNode->left;
     }
     else {
         childNode = delNode->right;

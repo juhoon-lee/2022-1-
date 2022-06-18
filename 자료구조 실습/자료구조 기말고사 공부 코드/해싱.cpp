@@ -4,11 +4,11 @@
 using namespace std;
 
 #define NOITEM 0
-#define ISITEM 0
-#define AVAILABLE 0
+#define ISITEM 1
+#define AVAILABLE 2
 
 struct entry {
-    int key;;
+    int key;
     string value;
     int valid;
     
@@ -49,7 +49,7 @@ hashTable::hashTable(int N) {
 }
 
 int hashTable::hashFnc(int key) {
-    return key & capacity;
+    return key % capacity;
 }
 
 void hashTable::put(int key, string value) {

@@ -22,7 +22,7 @@ private:
 };
 
 int sortedSeqPQ::size() {
-    return (int)seq.size();
+    return (int)seq.size()-1;
 }
 
 bool sortedSeqPQ::empty() {
